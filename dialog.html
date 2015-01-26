@@ -1,0 +1,20 @@
+<script type="x-tmpl-mustache" id="template">
+	<div class="pure-dialog <%=theme%> animated zoomIn">
+		<div class="dialog-body">
+			<%=message%>
+		</div>
+		<ul class="dialog-button-group">
+			<%if(!customButton && type == "dialog") {%>
+				<li id="dialog-ok" class="dialog-button"><%=okText%></li>
+				<li id="dialog-cancel" class="dialog-button blod"><%=cancelText%></li>
+			<%} else if (type == "topic") {%>
+
+			<%} else {%>
+				<%for(var key in customButton) {%>
+					<li id="<%=customButton[key].id%>" class="dialog-button <%=customButton[key].class%>"><%=customButton[key].text%></li>
+				<%}%>
+
+			<%}%>
+		</ul>
+	</div>
+</script>
